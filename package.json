@@ -1,0 +1,16 @@
+{
+  "name": "express-default-errors",
+  "version": "0.0.1",
+  "description": "Default ExpressJS error-handling middleware.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Justin de Guzman <justin@justindeguzman.net> (http://justindeguzman.net)",
+  "license": "MIT",
+  "devDependencies": {
+    "express": "^4.13.3",
+    "request": "^2.61.0",
+    "should": "^7.0.4"
+  }
+}
