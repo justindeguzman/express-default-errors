@@ -1,6 +1,6 @@
 {
   "name": "express-default-errors",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Default ExpressJS error-handling middleware.",
   "main": "lib/index.js",
   "scripts": {
