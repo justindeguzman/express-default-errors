@@ -59,8 +59,9 @@ Setting the status code will cause the middleware to serve default error message
 
 <table>
 	<tr><th>Status Code</th><th>Default Message</th></tr>
+  <tr><td>400</td><td><em>Bad Request</em></td></tr>
+  <tr><td>401</td><td><em>Unauthorized</em></td></tr>
 	<tr><td>404</td><td><em>Not Found</em></td></tr>
-	<tr><td>401</td><td><em>Unauthorized</em></td></tr>
 	<tr><td>500</td><td><em>Internal Server Error</em></td></tr>
 </table>
 

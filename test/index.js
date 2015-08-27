@@ -35,6 +35,12 @@ describe('express-default-errors', function () {
       next(err)
     })
 
+    router.get('/bad-request-route', function (req, res, next) {
+      var err = new Error()
+      err.status = 400
+      next(err)
+    })
+
     router.get('/error-route', function (req, res, next) {
       var err = new Error('A custom error was caused.')
       next(err)
@@ -124,6 +130,21 @@ describe('express-default-errors', function () {
       should.exist(response.statusCode)
       JSON.parse(body).error.should.eql('Internal Server Error')
       response.statusCode.should.eql(299)
+      server.close()
+      done()
+    })
+  })
+
+  it('should result in a 400 status code', function (done) {
+    var server = setupTestServer()
+    var url = 'http://localhost:' + port + '/bad-request-route'
+
+    request(url, function (err, response, body) {
+      should.not.exist(err)
+      should.exist(response)
+      should.exist(response.statusCode)
+      JSON.parse(body).error.should.eql('Bad Request')
+      response.statusCode.should.eql(400)
       server.close()
       done()
     })
